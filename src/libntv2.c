@@ -4351,7 +4351,7 @@ static double ntv2_calculate_one_shift(
  * In this routine we deal with our idea of a phantom row/col of
  * zero-shift values along each edge of the top-level-grid.
  */
-static void ntv2_calculate_shifts(
+void ntv2_calculate_shifts(
    const NTV2_HDR * hdr,
    const NTV2_REC * rec,
    double           lon,

@@ -793,6 +793,22 @@ extern int ntv2_transform(
 
 /*---------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------
+ * Calculate the lon & lat shifts for a given lon/lat.
+ *
+ * In this routine we deal with our idea of a phantom row/col of
+ * zero-shift values along each edge of the top-level-grid.
+ */
+
+extern void ntv2_calculate_shifts(
+   const NTV2_HDR * hdr,
+   const NTV2_REC * rec,
+   double           lon,
+   double           lat,
+   int              status,
+   double *         plon_shift,
+   double *         plat_shift);
+
 #ifdef __cplusplus
 }
 #endif
