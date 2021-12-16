@@ -1,4 +1,10 @@
-## ntv2-file-routines
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Geo-Linux-Calculations/libntv2)
+![GitHub Release Date](https://img.shields.io/github/release-date/Geo-Linux-Calculations/libntv2)
+![GitHub repo size](https://img.shields.io/github/repo-size/Geo-Linux-Calculations/libntv2)
+![GitHub all releases](https://img.shields.io/github/downloads/Geo-Linux-Calculations/libntv2/total)
+![GitHub](https://img.shields.io/github/license/Geo-Linux-Calculations/libntv2)
+
+## libntv2
 
 ### Introduction
 

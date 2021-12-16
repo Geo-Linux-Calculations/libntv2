@@ -8,6 +8,7 @@ debug32/
 debug64/
 release32/
 release64/
+build/
 
 # temp files
 *.list
