@@ -492,6 +492,7 @@ static double ntv2_atod(char *s)
  *
  * The string will always have a '.' as the decimal point character.
  */
+/*
 static char * ntv2_dtoa(char *buf, double dnum)
 {
    char decimal_point_char = localeconv()->decimal_point[0];
@@ -526,18 +527,12 @@ static char * ntv2_dtoa(char *buf, double dnum)
 
       if ( iexp < 12 )
       {
-         /* Check the last couple of sig digits */
-
          if ( !strncmp(pc, "00", 2) )
          {
-            /* Truncate */
-            /* Drop the number of significant digits */
             nsigdigits--;
          }
          else if ( !strncmp(pc, "99", 2) )
          {
-            /* Round up */
-            /* Drop the number of significant digits */
             nsigdigits--;
          }
       }
@@ -619,6 +614,34 @@ static char * ntv2_dtoa(char *buf, double dnum)
    }
 
    ntv2_strip_buf(buf);
+
+   return buf;
+}
+*/
+static char * ntv2_dtoa(char *buf, double dbl)
+{
+   char dec_pnt = localeconv()->decimal_point[0];
+   char *s;
+   char *d;
+   char *p = NULL;
+
+   sprintf(buf, "%.12lf", dbl);
+   s = strchr(buf, dec_pnt);
+   if ( s != NULL )
+   {
+      *s = '.';
+
+      s += 2;
+      for (d = s; *d; d++)
+      {
+         if ( *d != '0' )
+            p = d;
+      }
+      if ( p == NULL )
+         *s = 0;
+      else
+         p[1] = 0;
+   }
 
    return buf;
 }

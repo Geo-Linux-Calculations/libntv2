@@ -33,8 +33,8 @@ extern "C" {
 
 #define NTV2_VERSION_MAJOR     1
 #define NTV2_VERSION_MINOR     0
-#define NTV2_VERSION_RELEASE   0
-#define NTV2_VERSION_STR       "1.0.1"
+#define NTV2_VERSION_RELEASE   2
+#define NTV2_VERSION_STR       "1.0.2"
 
 /*------------------------------------------------------------------------*/
 /* external definitions & structs                                         */

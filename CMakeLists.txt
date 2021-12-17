@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(ntv2)
-set(MAJOR_VERSION 0)
-set(DATE_VERSION 20201216)
-set(NTV2_VERSION ${MAJOR_VERSION}.${DATE_VERSION})
+set(NTV2_VERSION_MAJOR 1)
+set(NTV2_VERSION_MINOR 0)
+set(NTV2_VERSION_RELEASE 2)
+set(NTV2_VERSION ${NTV2_VERSION_MAJOR}.${NTV2_VERSION_MINOR}.${NTV2_VERSION_RELEASE})
 project(ntv2 VERSION ${NTV2_VERSION})
 
 
@@ -10,7 +11,7 @@ set(SOURCES ${PROJECT_SOURCE_DIR}/src/libntv2.c)
 file(GLOB HEADERS ${PROJECT_SOURCE_DIR}/include/*.h)
 
 add_library(ntv2 SHARED ${SOURCES})
-set_target_properties(ntv2 PROPERTIES VERSION ${NTV2_VERSION} SOVERSION ${MAJOR_VERSION})
+set_target_properties(ntv2 PROPERTIES VERSION ${NTV2_VERSION} SOVERSION ${NTV2_VERSION_MAJOR})
 target_compile_options(ntv2 PRIVATE -DNTV2_NO_MUTEXES)
 target_include_directories(ntv2 PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(ntv2 m)
